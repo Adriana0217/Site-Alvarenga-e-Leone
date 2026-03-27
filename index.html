@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alvarenga & Leone Advogados Associados</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f1;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #1f4d3a;
+        color: white;
+        padding: 20px 40px;
+        position: sticky;
+        top: 0;
+      }
+
+      .topo {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .topo h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(31, 77, 58, 0.75), rgba(31, 77, 58, 0.75)),
+          url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 90px 20px;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto 25px;
+      }
+
+      .botao-whats {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+
+      .secao {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .secao h2 {
+        color: #1f4d3a;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+      }
+
+      .card {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 5px solid #1f4d3a;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        color: #1f4d3a;
+        margin-bottom: 10px;
+      }
+
+      .equipe-card {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 5px solid #1f4d3a;
+        transition: 0.3s;
+        text-align: center;
+      }
+
+      .equipe-card h3 {
+        font-size: 16px;
+        white-space: nowrap;
+      }
+
+      .equipe-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .contato p {
+        margin-bottom: 10px;
+      }
+
+      footer {
+        background-color: #1f4d3a;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 30px;
+      }
+      .sobre-container {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .sobre-texto {
+        flex: 1;
+      }
+
+      .sobre-imagem {
+        flex: 1;
+        height: 400px;
+        background: url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+      }
+      .grid-equipe {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+      }
+
+      .grid-equipe .equipe-card:nth-child(1),
+      .grid-equipe .equipe-card:nth-child(2),
+      .grid-equipe .equipe-card:nth-child(3) {
+        grid-column: span 2;
+      }
+
+      .grid-equipe .equipe-card:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+
+      .grid-equipe .equipe-card:nth-child(5) {
+        grid-column: 4 / span 2;
+      }
+      .grid-atuacao {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-top: 30px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #sobre,
+      #atuacao,
+      #equipe,
+      #contato {
+        scroll-margin-top: 140px;
+      }
+      .logo-texto {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-texto .nome {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .logo-texto .sub {
+        font-size: 12px;
+        margin-top: 3px;
+        opacity: 0.8;
+      }
+      .logo {
+        height: 130px;
+        width: auto;
+      }
+      @media (max-width: 768px) {
+        .topo {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 15px;
+          flex-direction: column;
+          gap: 12px;
+          padding: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 26px;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+          line-height: 1.3;
+        }
+
+        .hero p {
+          font-size: 16px;
+          padding: 0 10px;
+        }
+      }
+      @media (max-width: 768px) {
+        /* TOPO */
+        .topo {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+        }
+
+        .logo {
+          width: 100%;
+          max-width: 220px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+          padding: 0;
+          margin: 0;
+        }
+
+        /* HERO */
+        .hero {
+          padding: 60px 15px;
+        }
+
+        .hero h2 {
+          font-size: 26px;
+          line-height: 1.3;
+        }
+
+        .hero p {
+          font-size: 15px;
+        }
+
+        /* BOTÃO */
+        .botao-whats {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        /* SEÇÕES */
+        .secao {
+          margin: 20px 10px;
+          padding: 20px;
+        }
+
+        /* SOBRE */
+        .sobre-container {
+          flex-direction: column;
+        }
+
+        .sobre-imagem {
+          width: 100%;
+          height: 220px;
+        }
+
+        /* ÁREA DE ATUAÇÃO */
+        .grid-atuacao {
+          grid-template-columns: 1fr;
+        }
+
+        /* EQUIPE */
+        .grid-equipe {
+          grid-template-columns: 1fr;
+        }
+
+        .equipe-card h3 {
+          white-space: normal;
+        }
+      }
+      @media (max-width: 768px) {
+        .grid-equipe {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-equipe .equipe-card:nth-child(1),
+        .grid-equipe .equipe-card:nth-child(2),
+        .grid-equipe .equipe-card:nth-child(3),
+        .grid-equipe .equipe-card:nth-child(4),
+        .grid-equipe .equipe-card:nth-child(5) {
+          grid-column: auto;
+        }
+
+        .equipe-card h3 {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topo">
+        <img src="logo.png" alt="Alvarenga & Leone" class="logo" />
+
+        <nav>
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#atuacao">Áreas de Atuação</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h2>Atuação jurídica com seriedade, experiência e compromisso</h2>
+      <p>
+        Soluções jurídicas personalizadas para pessoas e empresas, com
+        atendimento próximo, responsável e eficiente.
+      </p>
+      <a class="botao-whats" href="https://wa.me/5541998999020" target="_blank">
+        Fale conosco pelo WhatsApp
+      </a>
+    </section>
+
+    <section class="secao" id="sobre">
+      <div class="sobre-container">
+        <div class="sobre-texto">
+          <h2>Sobre o Escritório</h2>
+
+          <p>
+            O escritório Alvarenga & Leone Advogados Associados, desde sua
+            fundação, dedica-se à prestação de soluções jurídicas eficientes,
+            claras e descomplicadas, sempre com foco no atendimento
+            personalizado e nas necessidades específicas de cada cliente.
+          </p>
+
+          <br />
+
+          <p>
+            Constituído em 26 de setembro de 2001, o escritório é devidamente
+            registrado na Subseção Paranaense da Ordem dos Advogados do Brasil,
+            atuando com seriedade, ética e comprometimento ao longo de sua
+            trajetória.
+          </p>
+
+          <br />
+
+          <p>
+            Com atuação em diversas áreas do Direito, o escritório atende em
+            âmbito nacional, acompanhando processos eletrônicos em diferentes
+            tribunais, incluindo o Superior Tribunal de Justiça (STJ) e o
+            Supremo Tribunal Federal (STF).
+          </p>
+
+          <br />
+
+          <p>
+            A equipe atua de forma integrada e coordenada, garantindo
+            acompanhamento direto e gestão eficiente dos processos,
+            proporcionando maior transparência, agilidade e atualização
+            constante das informações aos clientes.
+          </p>
+        </div>
+
+        <div class="sobre-imagem"></div>
+      </div>
+    </section>
+
+    <section class="secao" id="atuacao">
+      <h2>Áreas de Atuação</h2>
+      <div class="grid-atuacao">
+        <div class="card">
+          <h3>Direito Civil</h3>
+          <p>
+            Atuação em demandas cíveis, obrigações, contratos e responsabilidade
+            civil.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Direito Empresarial</h3>
+          <p>
+            Assessoria jurídica para empresas e apoio estratégico em questões
+            corporativas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Direito Previdenciário</h3>
+          <p>
+            Atendimento em aposentadorias, benefícios e revisões
+            previdenciárias.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Direito Trabalhista</h3>
+          <p>Atuação em demandas trabalhistas, consultivas e contenciosas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="equipe">
+      <h2>Equipe</h2>
+      <div class="grid-equipe">
+        <div class="equipe-card">
+          <h3>Luiz Eduardo Virmond Leone</h3>
+          <p>Advogado Associado</p>
+          <p>OAB/PR 33192</p>
+        </div>
+
+        <div class="equipe-card">
+          <h3>João Rodrigo Stingen Alvarenga</h3>
+          <p>Advogado Associado</p>
+          <p>OAB/PR 31845</p>
+        </div>
+
+        <div class="equipe-card">
+          <h3>Michelle Seleme Leone</h3>
+          <p>Advogada Associada</p>
+          <p>OAB/PR 37638</p>
+        </div>
+
+        <div class="equipe-card">
+          <h3>Victória Aparecida Caldatto Kreniski</h3>
+          <p>Advogada</p>
+          <p>OAB/PR 111443</p>
+        </div>
+
+        <div class="equipe-card">
+          <h3>Adriana Mateus</h3>
+          <p>Secretária</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao contato" id="contato">
+      <h2>Contato</h2>
+      <p><strong>Telefone:</strong> 0800-648-0740 | (41) 3018-9020</p>
+      <p><strong>WhatsApp:</strong> (41) 99899-9020</p>
+      <p><strong>E-mail:</strong> alvarengaeleone@hotmail.com</p>
+
+      <p>
+        <strong>Endereço:</strong> Av. Vicente Machado, 551, Centro, Curitiba -
+        PR, CEP: 80420-010
+      </p>
+      <iframe
+        src="https://www.google.com/maps?q=Av.+Vicente+Machado,+551,+Curitiba&output=embed"
+        width="100%"
+        height="300"
+        style="border: 0; border-radius: 12px; margin-top: 20px"
+        allowfullscreen=""
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <footer>
+      <p>
+        &copy; <span id="ano"></span> Alvarenga & Leone Advogados Associados -
+        Todos os direitos reservados.
+      </p>
+    </footer>
+    <script>
+      document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
